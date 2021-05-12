@@ -15,11 +15,11 @@
 
 # Recommended Skills, Languages & Tools
 
-## Software 
+### Software 
 
-## Fabrication
+### Fabrication
 
-## Programming 
+### Programming 
 
 # Software
 
