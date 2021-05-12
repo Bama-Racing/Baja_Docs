@@ -9,6 +9,9 @@
 
 
 # Team Members
+* Nathan Eads
+* Emma Goldthorpe
+* John Yordy
 
 # Recommended Skills, Languages & Tools
 
