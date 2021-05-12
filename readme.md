@@ -44,7 +44,7 @@ The GUI is generated using a library called Eel. Eel does a couple things:
 * Launches a locally hosted website
 * Connects the JavaScript file in this site to your main Python script
  
-Eel will be discussed in more depth (below)[#External-Documentation].  
+Eel will be discussed in more depth [below](#External-Documentation).  
  
 ### Kill Switches 
 Kill Switches are required by SAE
