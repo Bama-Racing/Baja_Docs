@@ -3,7 +3,7 @@
 
 # Table of Contents
 * [Team Members](#team-members)
-* [Recommended Skills, Languages & Tools](#Recommended Skills, Languages & Tools)
+* [Recommended Skills, Languages & Tools](#Recommended-Skills,-Languages-&-Tools)
 * [Software](#Software)
 * [Hardware](#Hardware)
 
