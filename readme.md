@@ -22,8 +22,10 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
 * Eel Documentation 
 * Virtual Environments
 * Link to JavaScript Dials
+* My HTML/CSS/JS Video Tutorial
 * W3 Schools HTML
 * W3 Schools CSS
+* W3 Schools JS
 * Arduino Speedometer Examples
 
 # Brief System Overview
@@ -42,15 +44,10 @@ The GUI is generated using a library called Eel. Eel does a couple things:
 * Launches a locally hosted website
 * Connects the JavaScript file in this site to your main Python script
  
-When Eel is initialized, the method will require a directory to the local site. See the tutorial video I made on HTML/CSS to better understand this. This will be the folder that houses all of your HTML/CSS for your website. 
-
-Assuming there is a JavaScript file in your website, Eel allows for Python functions to be exposed to JavaScript and vice versa. This allows for a JavaScript function to be run from your Python script. In our case, we can write a function in JavaScript to update the text in our HTML document and then call it from Python and pass in the speed and RPM variables.
-
-**Note that Eel must be run in Python 3.7 or later.** Please also be sure to double check the Eel documentation to make sure this requirement has not changed. 
-
-The best way to make sure Eel is running in the correct version of Python is by creating a Python 3.7 Virtual Environment (venv). Make sure this environment is initialized before running the script. **Failing to do so will cause the background to appear white.** 
-
-
+Eel will be discussed in more depth (below)[#External-Documentation].  
+ 
+### Kill Switches 
+Kill Switches are required by SAE
 
 
 
