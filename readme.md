@@ -15,6 +15,12 @@
 
 # Recommended Skills, Languages & Tools
 
+## Software 
+
+## Fabrication
+
+## Programming 
+
 # Software
 
 # Hardware
