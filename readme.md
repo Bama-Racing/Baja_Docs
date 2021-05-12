@@ -17,7 +17,7 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
 * John Yordy
 * Brendan Kuhlmann 
 
-# Other Useful Documentation
+# External Documentation
 * SAE Rule Book 
 * W3 Schools HTML
 * W3 Schools CSS
