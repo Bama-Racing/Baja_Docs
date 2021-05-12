@@ -23,6 +23,33 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
 * W3 Schools CSS
 * Other Speedometer 
 
+# Brief System Overview
+### The HUD
+The HUD is Electrical's show pony. It is currently comprised of a Raspberry Pi 3B connected to a touch screen display and two Hall Effect Sensors. These Hall Effect sensors are able to detect magnetic fields. By placngin 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Hardware
 ### The HUD 
 The HUD is currently comprised of three major PCBs and one tertiary power distribution PCB (I know that might sound scary, just stick with me). 
