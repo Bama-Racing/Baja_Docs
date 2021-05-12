@@ -44,12 +44,21 @@ The GUI is generated using a library called Eel. Eel does a couple things:
 * Launches a locally hosted website
 * Connects the JavaScript file in this site to your main Python script
  
-Eel will be discussed in more depth [below](#External-Documentation).  
+Eel will be discussed in more depth [below]().  
  
 ### Kill Switches 
-Kill Switches are required by SAE
+Kill Switches are required by SAE. 
 
+Double check the [SAE Rulebook] for the latest rules, but currently one is placed on the driver's left side near the middle of the side impact and another on the upper right side of the frame, just behind the firewall, when looking at the car from behind. 
 
+Pressing **either** kill switch should stop the engine. 
+
+### Brakelight 
+The brakelight is also required by SAE. You should again double check the [SAE Rulebook] to make sure the following information is still accurate. 
+
+There are two brakelight sensors integrated into the brakeline. When the brake is pushed, the pressure in the brakeline causes these switches to close an electrical circuit. 
+
+By connecting these sensors in parallel and then in series with a pair of 9V batteries in parallel, and assuming the brakes team did their job correctly, both brake lines should trigger the brake light. **You should test to make sure that both brake lines trigger the light by disconnecting one sensor at a time and pressing the brake pedal.**
 
 
 
@@ -83,11 +92,7 @@ The kill switches work by shorting out the low-voltage end of the alternator's t
 By shorting this transformer, we can halt the spark plugs from firing, thus killing the engine. 
 
 ##### Brakelight 
-The brakelight is also required by SAE. 
 
-There are two brakelight sensors integrated into the brakeline. When the brake is pushed, the pressure in the brakeline causes these switches to close an electrical circuit. 
-
-By connecting these sensors in parallel and then in series with a pair of 9V batteries in parallel, and assuming the brakes team did their job correctly, both brake lines should trigger the brake light. **You should test to make sure that both brake lines trigger the light by disconnecting one sensor at a time and pressing the brake pedal.**
 
 ##### Headlights
 Some of our cars run headlights, they are not required, but what do rednecks love more than light bars? 
