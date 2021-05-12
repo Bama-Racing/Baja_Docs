@@ -19,19 +19,36 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
 
 # External Documentation
 * SAE Rule Book 
+* Eel Documentation 
+* Virtual Environments
+* Link to JavaScript Dials
 * W3 Schools HTML
 * W3 Schools CSS
-* Other Speedometer 
+* Arduino Speedometer Examples
 
 # Brief System Overview
 ### The HUD
-The HUD is Electrical's show pony. It is currently comprised of a Raspberry Pi 3B connected to a touch screen display and two Hall Effect Sensors. These Hall Effect sensors are able to detect magnetic fields. By placngin 
+The HUD is Electrical's show pony. It is currently comprised of a Raspberry Pi 3B connected to a touch screen display and two Hall Effect Sensors. These Hall Effect sensors are able to detect magnetic fields. By placing magnets on the output shaft of the engine and one of the axles, we can derive engine and wheel RPM (and then calculate speed).
 
+### Firmware
+The firmware is what I have labeled the mathematics code. This code begins by using a listener event called an interrupt to monitor the GPIO pins the Hall Effect Sensors are connected to. When the voltage on this pin changes, the interrupt listener is triggered and calls the perscribed function.
 
+This function records the time between pulses in nanoseconds and uses this to calculate RPM. The speed function is then multiplied by a constant to account for wheel diameter. 
 
+### Software 
+The data from these functions is then saved to a variable. The software then displays these variables on the GUI. 
 
+The GUI is generated using a library called Eel. Eel does a couple things: 
+* Launches a locally hosted website
+* Connects the JavaScript file in this site to your main Python script
+ 
+When Eel is initialized, the method will require a directory to the local site. See the tutorial video I made on HTML/CSS to better understand this. This will be the folder that houses all of your HTML/CSS for your website. 
 
+Assuming there is a JavaScript file in your website, Eel allows for Python functions to be exposed to JavaScript and vice versa. This allows for a JavaScript function to be run from your Python script. In our case, we can write a function in JavaScript to update the text in our HTML document and then call it from Python and pass in the speed and RPM variables.
 
+**Note that Eel must be run in Python 3.7 or later.** Please also be sure to double check the Eel documentation to make sure this requirement has not changed. 
+
+The best way to make sure Eel is running in the correct version of Python is by creating a Python 3.7 Virtual Environment (venv). Make sure this environment is initialized before running the script. **Failing to do so will cause the background to appear white.** 
 
 
 
