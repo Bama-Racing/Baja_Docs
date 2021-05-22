@@ -6,7 +6,7 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
 # Table of Contents
 * [Team Members](#team-members)
 * [External Documentation](#external-documentation)
-* [Recommended Skills](Recommended Skills)
+* [Recommended Skills](#Recommended-Skills)
 * [System Overview]()
   - HUD Overview
   - Kill Switches
