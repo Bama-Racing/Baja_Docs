@@ -27,15 +27,14 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
 * Brendan Kuhlmann
 
 ## External Documentation
-* SAE Rule Book
-* Eel Documentation
-* Virtual Environments
-* Link to JavaScript Dials
-* My HTML/CSS/JS Video Tutorial
-* W3 Schools HTML
-* W3 Schools CSS
-* W3 Schools JS
-* Arduino Speedometer Examples
+* [SAE Baja Rule Book (Download Latest Version)](https://www.bajasae.net/cdsweb/gen/DocumentResources.aspx)
+* [Eel Documentation](https://github.com/ChrisKnott/Eel)
+* [Link to JavaScript Dials](https://www.cssscript.com/canvas-based-html5-gauge-library-gauge-js/)
+* [My HTML/CSS/JS Video Tutorial]()
+* [W3 Schools HTML](https://www.w3schools.com/html/default.asp)
+* [W3 Schools CSS](https://www.w3schools.com/css/default.asp)
+* [W3 Schools JS](https://www.w3schools.com/js/default.asp)
+* [Arduino Speedometer Examples](https://makersportal.com/blog/2018/10/3/arduino-tachometer-using-a-hall-effect-sensor-to-measure-rotations-from-a-fan)
 
 ## Recommended Skills
 Since I had the liberty of building this project essentially from scratch, I used a method based around my own skillset. I hope that this does not cause problems down the road.
