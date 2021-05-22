@@ -16,7 +16,7 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
   - HUD Overview
   - Other Electrical Systems
 * [Fabrication Methods & Notes]()
-* [So... What's Next?](#So... What's Next?)
+* [A Path Forward](#A-Path-Forward)
 
 ## Team Members
 * Nathan Eads
@@ -174,7 +174,7 @@ Thankfully, by spending the school's money, you can buy yourself some tools that
 * [Nice solder.](https://www.amazon.com/MAIYUM-63-37-Solder-Electrical-Soldering/dp/B075WBDYZZ/ref=sr_1_5?dchild=1&keywords=solder&qid=1621650669&sr=8-5&th=1)
 * [A solder sucker for when you mess up.](https://www.amazon.com/Solder-Sucker-Desoldering-Removal-Soldering/dp/B08FDY2SGS/ref=sr_1_7?dchild=1&keywords=solder+sucker&qid=1621650674&sr=8-7)
 
-# So... What's Next?
+# A Path Forward
 ### Incomplete Features
 ###### Zero Timeout
 Currently, neither the speedometer nor the tachometer will ever reach zero. Since these values are calculated by dividing a constant by a change in time, at no point in time will this function ever return zero.
