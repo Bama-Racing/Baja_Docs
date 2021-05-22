@@ -7,15 +7,17 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
 * [Team Members](#team-members)
 * [External Documentation](#external-documentation)
 * [Recommended Skills](#Recommended-Skills)
-* [System Overview]()
+* [System Overview](#System-Overview)
   - HUD Overview
   - Kill Switches
   - Brakelight
   - Headlights
-* [System Details]()
+* [System Details](#System-Details)
   - HUD Overview
-  - Other Electrical Systems
-* [Fabrication Methods & Notes]()
+  - Kill Switches
+  - Brakelight
+  - Headlights
+* [Fabrication Methods & Notes](#Fabrication-Methods-&-Notes)
 * [A Path Forward](#A-Path-Forward)
 
 ## Team Members
