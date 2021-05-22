@@ -6,6 +6,17 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
 # Table of Contents
 * [Team Members](#team-members)
 * [External Documentation](#external-documentation)
+* [Recommended Skills](Recommended Skills)
+* [System Overview]()
+  - HUD Overview
+  - Kill Switches
+  - Brakelight
+  - Headlights
+* [System Details]()
+  - HUD Overview
+  - Other Electrical Systems
+* [Fabrication Methods & Notes]()
+* [So... What's Next?]()
 
 ## Team Members
 * Nathan Eads
@@ -39,8 +50,8 @@ That being said, the following is a list of programming languages, methods, etc.
 * GitHub
 * Eel (Python Library)
 
-## Brief System Overview
-### The HUD
+## System Overview
+### HUD Overview
 The HUD is Electrical's show pony. It is currently comprised of a Raspberry Pi connected to a touch screen display and two Hall Effect Sensors (HES). These Hall Effect Sensors are able to detect magnetic fields. By placing magnets on the output shaft of the engine and one of the axles, we can derive engine and wheel RPM (and then calculate speed).
 
 #### Firmware
@@ -51,7 +62,7 @@ When the voltage on this pin changes, the interrupt listener is triggered and ca
 #### Software
 The data from the speed and RPM functions is then saved to a variable. The software then displays these variables on the GUI.
 
-#### The GUI
+#### GUI
 The GUI is generated using a library called Eel. Eel does a couple things:
 * Launches a locally hosted website
 * Connects the JavaScript (JS) file in this site to your main Python script
@@ -60,16 +71,15 @@ By connecting the JS and Python with Eel, the main Python script is able to call
 
 Eel will be discussed in more depth [below]().  
 
-### Other Electrical Systems
-#### Kill Switches
+### Kill Switches
 Kill Switches are required by SAE.
 
 Pressing **either** kill switch should stop the engine.
 
-#### Brakelight
+### Brakelight
 The brakelight is also required by SAE. You should again double check the [SAE Rulebook] to make sure the following information is still accurate.
 
-#### Headlights
+### Headlights
 In the past, Baja has run a lightbar or similar headlight unit. This is not required and should take a lower priority than the items above, but it is a very simple circuit.
 
 # System Details
@@ -84,8 +94,7 @@ We can then monitor the voltage set by these sensors which is transmitted to the
 
 Circuit Diagram
 
-### Other Electrical Systems
-##### Kill Switches
+### Kill Switches
 You should double check the [SAE Rulebook] for the latest rules, however currently, one button-switch is placed on the driver's left side near the middle of the side impact and another on the upper right side of the frame, just behind the firewall, when looking at the car from behind.
 
 The kill switches work by shorting out the low-voltage end of the alternator's transformer. A car produces it's electricity using an alternator; the alternator sits on the engine and turns the motion of the shafts into electrical power. This electricity is then put into a transformer which provides adequate voltage/current to the sparkplug.
@@ -94,18 +103,18 @@ By shorting this transformer, we can halt the spark plugs from firing, thus "kil
 
 Circuit Diagram
 
-##### Brakelight
+### Brakelight
 There are two brakelight sensors integrated into the brakeline. When the brake is pushed, the pressure in the brakeline causes these switches to close an electrical circuit.
 
 By connecting these sensors in parallel and then in series with a pair of 9V batteries in parallel, and assuming the brakes team did their job correctly, both brake lines should trigger the brake light. **You should test to make sure that both brake lines trigger the light by disconnecting one sensor at a time and pressing the brake pedal.**
 
 Circuit Diagram
 
-##### Headlights
+### Headlights
 
 Circuit Diagram
 
-# Recommended Skills & Fabrication Quirks   
+# Fabrication Methods & Notes   
 The following section will briefly touch on the recommended skills listed [above]() as well as some challenges in fabricating the HUD, should you choose to pursue fabricating a new unit.
 
 ### 3D Printing
@@ -166,7 +175,7 @@ Thankfully, by spending the school's money, you can buy yourself some tools that
 * [A solder sucker for when you mess up.](https://www.amazon.com/Solder-Sucker-Desoldering-Removal-Soldering/dp/B08FDY2SGS/ref=sr_1_7?dchild=1&keywords=solder+sucker&qid=1621650674&sr=8-7)
 
 # So... What's Next?
-### Incomplete features
+### Incomplete Features
 ###### Zero Timeout
 Currently, neither the speedometer nor the tachometer will ever reach zero. Since these values are calculated by dividing a constant by a change in time, at no point in time will this function ever return zero.
 
