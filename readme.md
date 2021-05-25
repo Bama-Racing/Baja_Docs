@@ -112,8 +112,8 @@ By connecting these sensors in parallel and then in series with a pair of 9V bat
 ###### Circuit Diagram
 ![image](https://user-images.githubusercontent.com/16143653/119431148-ad838400-bcd7-11eb-8513-b2bc6393b547.png)
 
-# Fabrication Methods & Notes   
-The following section will briefly touch on the recommended skills listed [above]() as well as some challenges in fabricating the HUD, should you choose to pursue fabricating a new unit.
+# Fabrication Methods & Miscellaneous Notes   
+The following section will briefly touch on the recommended skills listed above, as well as some challenges in fabricating the HUD, should you choose to pursue fabricating a new unit.
 
 ### 3D Printing
 I base a lot of my work around 3D printing. It's very fast, if I plan my day well, I can go through 10 - 15 iterations of a design per day, compared to a teammate who might go through a similar number in a year.
@@ -173,6 +173,11 @@ Thankfully, by spending the school's money, you can buy yourself some tools that
 * [A solder sucker for when you mess up.](https://www.amazon.com/Solder-Sucker-Desoldering-Removal-Soldering/dp/B08FDY2SGS/ref=sr_1_7?dchild=1&keywords=solder+sucker&qid=1621650674&sr=8-7)
 
 # A Path Forward
+
+The most necessary change is one of team culture - this was slightly too big of a job for just me. I think it can be easily divided into three sections: programming, CAD & simple circuits. Each of these sections is easily underestmated. I suggest a team of 2 - 3 consistent members, one designated to each section. These members should iterate on what's there (however, nearly everything I built was rushed and could use a replacement) and should be congnisant of their own workloads: do they need to recruit a subordinate? When will they leave the team? How will they transfer their experience? 
+
+The engineering I did for Baja was certainly not my best work, but this is the aspect where I personally struggled the most. 
+
 ### Incomplete Features
 ###### Zero Timeout
 Currently, neither the speedometer nor the tachometer will ever reach zero. Since these values are calculated by dividing a constant by a change in time, at no point in time will this function ever return zero.
