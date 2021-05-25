@@ -94,6 +94,7 @@ These sensors have a binary digital output dependent on their proximity to magne
 We can then monitor the voltage set by these sensors which is transmitted to the Pi through their digital output pins. When the voltage changes, the firmware will trigger the calculation functions discussed above.
 
 Circuit Diagram
+![image](https://user-images.githubusercontent.com/16143653/119431060-82993000-bcd7-11eb-8594-f73f50013f66.png)
 
 ### Kill Switches
 You should double check the [SAE Rulebook] for the latest rules, however currently, one button-switch is placed on the driver's left side near the middle of the side impact and another on the upper right side of the frame, just behind the firewall, when looking at the car from behind.
@@ -103,6 +104,7 @@ The kill switches work by shorting out the low-voltage end of the alternator's t
 By shorting this transformer, we can halt the spark plugs from firing, thus "killing" the engine.
 
 Circuit Diagram
+![image](https://user-images.githubusercontent.com/16143653/119431099-99d81d80-bcd7-11eb-90eb-c7564321935e.png)
 
 ### Brakelight
 There are two brakelight sensors integrated into the brakeline. When the brake is pushed, the pressure in the brakeline causes these switches to close an electrical circuit.
@@ -110,10 +112,7 @@ There are two brakelight sensors integrated into the brakeline. When the brake i
 By connecting these sensors in parallel and then in series with a pair of 9V batteries in parallel, and assuming the brakes team did their job correctly, both brake lines should trigger the brake light. **You should test to make sure that both brake lines trigger the light by disconnecting one sensor at a time and pressing the brake pedal.**
 
 Circuit Diagram
-
-### Headlights
-
-Circuit Diagram
+![image](https://user-images.githubusercontent.com/16143653/119431148-ad838400-bcd7-11eb-8513-b2bc6393b547.png)
 
 # Fabrication Methods & Notes   
 The following section will briefly touch on the recommended skills listed [above]() as well as some challenges in fabricating the HUD, should you choose to pursue fabricating a new unit.
