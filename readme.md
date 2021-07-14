@@ -1,10 +1,10 @@
 # Welcome to the Bama Racing Computer Science & Electrical GitHub
 ### Last Updated: Summer 2021
 
-This document will discuss the Bama Racing HUD, its capabilities, areas for expansion, and some skills (or interests) needed to continue work.
+This document will discuss the Bama Racing Electrical Sub Team, its capabilities, areas for expansion, and some skills (or interests) needed to continue work.
 
 # Table of Contents
-* [Team Members](#team-members)
+* [Current Team Members](#team-members)
 * [External Documentation](#external-documentation)
 * [Recommended Skills](#Recommended-Skills)
 * [System Overview](#System-Overview)
@@ -16,17 +16,17 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
   - HUD Overview
   - Kill Switches
   - Brakelight
-  - Headlights
 * [Fabrication Methods & Notes](#Fabrication-Methods-&-Notes)
 * [A Path Forward](#A-Path-Forward)
 
-## Team Members
+# Team Members
 * Nathan Eads
+* Jade Cartolano
 * Emma Goldthorpe
 * John Yordy
 * Brendan Kuhlmann
 
-## External Documentation
+# External Documentation
 * [SAE Baja Rule Book (Download Latest Version)](https://www.bajasae.net/cdsweb/gen/DocumentResources.aspx)
 * [Eel Documentation](https://github.com/ChrisKnott/Eel)
 * [Link to JavaScript Dials](https://www.cssscript.com/canvas-based-html5-gauge-library-gauge-js/)
@@ -36,12 +36,12 @@ This document will discuss the Bama Racing HUD, its capabilities, areas for expa
 * [W3 Schools JS](https://www.w3schools.com/js/default.asp)
 * [Arduino Speedometer Examples](https://makersportal.com/blog/2018/10/3/arduino-tachometer-using-a-hall-effect-sensor-to-measure-rotations-from-a-fan)
 
-## Recommended Skills
+# Recommended Skills or Interests
 Since I had the liberty of building this project essentially from scratch, I used a method based around my own skillset. I hope that this does not cause problems down the road.
 
 Moreover, I want to note that **no skills whatsoever are required** coming into this project and I encourage you to strive to add a skill of your own to this list before you hang up your hat.
 
-That being said, the following is a list of programming languages, methods, etc. currently used in the Bama Racing Electrical System:
+That being said, the following is a list of programming languages, softwares, methods, etc. currently used in the Bama Racing Electrical System:
 * Python3
 * HTML/CSS
 * JavaScript
@@ -51,19 +51,19 @@ That being said, the following is a list of programming languages, methods, etc.
 * GitHub
 * Eel (Python Library)
 
-## System Overview
+# System Overview
 ### HUD Overview
 The HUD is Electrical's show pony. It is currently comprised of a Raspberry Pi connected to a touch screen display and two Hall Effect Sensors (HES). These Hall Effect Sensors are able to detect magnetic fields. By placing magnets on the output shaft of the engine and one of the axles, we can derive engine and wheel RPM (and then calculate speed).
 
-#### Firmware
+### Firmware
 The firmware is what I have labeled the calculation code. This code begins by using a listener event called an interrupt to monitor the GPIO pins the Hall Effect Sensors are connected to.
 
 When the voltage on this pin changes, the interrupt listener is triggered and calls the prescribed function. This function records the time between pulses in nanoseconds and uses this to calculate RPM. The speed function is then multiplied by a constant to account for wheel diameter.
 
-#### Software
+### Software
 The data from the speed and RPM functions is then saved to a variable. The software then displays these variables on the GUI.
 
-#### GUI
+### GUI
 The GUI is generated using a library called Eel. Eel does a couple things:
 * Launches a locally hosted website
 * Connects the JavaScript (JS) file in this site to your main Python script
@@ -93,8 +93,6 @@ These sensors have a binary digital output dependent on their proximity to magne
 
 We can then monitor the voltage set by these sensors which is transmitted to the Pi through their digital output pins. When the voltage changes, the firmware will trigger the calculation functions discussed above.
 
-Circuit Diagram
-
 ### Kill Switches
 You should double check the [SAE Rulebook] for the latest rules, however currently, one button-switch is placed on the driver's left side near the middle of the side impact and another on the upper right side of the frame, just behind the firewall, when looking at the car from behind.
 
@@ -102,18 +100,10 @@ The kill switches work by shorting out the low-voltage end of the alternator's t
 
 By shorting this transformer, we can halt the spark plugs from firing, thus "killing" the engine.
 
-Circuit Diagram
-
 ### Brakelight
 There are two brakelight sensors integrated into the brakeline. When the brake is pushed, the pressure in the brakeline causes these switches to close an electrical circuit.
 
 By connecting these sensors in parallel and then in series with a pair of 9V batteries in parallel, and assuming the brakes team did their job correctly, both brake lines should trigger the brake light. **You should test to make sure that both brake lines trigger the light by disconnecting one sensor at a time and pressing the brake pedal.**
-
-Circuit Diagram
-
-### Headlights
-
-Circuit Diagram
 
 # Fabrication Methods & Notes   
 The following section will briefly touch on the recommended skills listed [above]() as well as some challenges in fabricating the HUD, should you choose to pursue fabricating a new unit.
@@ -174,6 +164,23 @@ Thankfully, by spending the school's money, you can buy yourself some tools that
 * [A nice soldering iron.](https://www.amazon.com/X-Tronic-3020-XTS-Digital-Display-Soldering/dp/B079VVHPPS/ref=sr_1_22?dchild=1&keywords=soldering%2Biron&qid=1621650649&sr=8-22&th=1)
 * [Nice solder.](https://www.amazon.com/MAIYUM-63-37-Solder-Electrical-Soldering/dp/B075WBDYZZ/ref=sr_1_5?dchild=1&keywords=solder&qid=1621650669&sr=8-5&th=1)
 * [A solder sucker for when you mess up.](https://www.amazon.com/Solder-Sucker-Desoldering-Removal-Soldering/dp/B08FDY2SGS/ref=sr_1_7?dchild=1&keywords=solder+sucker&qid=1621650674&sr=8-7)
+
+# Code Video Tutorials
+
+These tutorials are in no way meant to be comprehensive, but they should serve as a launch point for you to delve further into the subject areas that cause you trouble.
+
+### HTML/CSS/JS
+[Overview](https://www.youtube.com/watch?v=gT0Lh1eYk78)
+[HTML (Short)](https://www.youtube.com/watch?v=bWPMSSsVdPk)
+[HTML (Atom)](https://www.youtube.com/watch?v=bupWPZdXqIA)
+[CSS](https://www.youtube.com/watch?v=1PnVor36_40)
+[JavaScript](https://www.youtube.com/watch?v=W6NZfCO5SIk)
+
+### Python3
+[Python Overview](https://www.youtube.com/watch?v=kqtD5dpn9C8)
+[Python Eel](https://www.youtube.com/watch?v=8eeUV1RHkmw)
+[Python on a RasPi](https://www.youtube.com/watch?v=xTIBG_KD8Bk)
+[Linux Virtual Environments](https://www.youtube.com/watch?v=Kg1Yvry_Ydk)
 
 # A Path Forward
 ### Incomplete Features
