@@ -30,7 +30,6 @@ This document will discuss the Bama Racing Electrical Sub Team, its capabilities
 * [SAE Baja Rule Book (Download Latest Version)](https://www.bajasae.net/cdsweb/gen/DocumentResources.aspx)
 * [Eel Documentation](https://github.com/ChrisKnott/Eel)
 * [Link to JavaScript Dials](https://www.cssscript.com/canvas-based-html5-gauge-library-gauge-js/)
-* [My HTML/CSS/JS Video Tutorial]()
 * [W3 Schools HTML](https://www.w3schools.com/html/default.asp)
 * [W3 Schools CSS](https://www.w3schools.com/css/default.asp)
 * [W3 Schools JS](https://www.w3schools.com/js/default.asp)
@@ -70,8 +69,6 @@ The GUI is generated using a library called Eel. Eel does a couple things:
 
 By connecting the JS and Python with Eel, the main Python script is able to call functions defined in your JavaScript... since JavaScript has built in features to modify HTML, using Eel as a proxy, your Python can modify the HTML GUI.  
 
-Eel will be discussed in more depth [below]().  
-
 ### Kill Switches
 Kill Switches are required by SAE.
 
@@ -93,6 +90,9 @@ These sensors have a binary digital output dependent on their proximity to magne
 
 We can then monitor the voltage set by these sensors which is transmitted to the Pi through their digital output pins. When the voltage changes, the firmware will trigger the calculation functions discussed above.
 
+###### Circuit Diagram
+![image](https://user-images.githubusercontent.com/16143653/119431060-82993000-bcd7-11eb-8594-f73f50013f66.png)
+
 ### Kill Switches
 You should double check the [SAE Rulebook] for the latest rules, however currently, one button-switch is placed on the driver's left side near the middle of the side impact and another on the upper right side of the frame, just behind the firewall, when looking at the car from behind.
 
@@ -100,13 +100,19 @@ The kill switches work by shorting out the low-voltage end of the alternator's t
 
 By shorting this transformer, we can halt the spark plugs from firing, thus "killing" the engine.
 
+###### Circuit Diagram
+![image](https://user-images.githubusercontent.com/16143653/119431099-99d81d80-bcd7-11eb-90eb-c7564321935e.png)
+
 ### Brakelight
 There are two brakelight sensors integrated into the brakeline. When the brake is pushed, the pressure in the brakeline causes these switches to close an electrical circuit.
 
 By connecting these sensors in parallel and then in series with a pair of 9V batteries in parallel, and assuming the brakes team did their job correctly, both brake lines should trigger the brake light. **You should test to make sure that both brake lines trigger the light by disconnecting one sensor at a time and pressing the brake pedal.**
 
-# Fabrication Methods & Notes   
-The following section will briefly touch on the recommended skills listed [above]() as well as some challenges in fabricating the HUD, should you choose to pursue fabricating a new unit.
+###### Circuit Diagram
+![image](https://user-images.githubusercontent.com/16143653/119431148-ad838400-bcd7-11eb-8513-b2bc6393b547.png)
+
+# Fabrication Methods & Miscellaneous Notes   
+The following section will briefly touch on the recommended skills listed above, as well as some challenges in fabricating the HUD, should you choose to pursue fabricating a new unit.
 
 ### 3D Printing
 I base a lot of my work around 3D printing. It's very fast, if I plan my day well, I can go through 10 - 15 iterations of a design per day, compared to a teammate who might go through a similar number in a year.
@@ -151,9 +157,9 @@ Where things get interesting is the Graphical User Interface (GUI). There is a r
 
 Eel will ask for a folder containing the files needed for a website. By exposing functions in your Python or JavaScript, the function can be accessed by the other (exposing a function in Python makes it available in JavaScript and vice versa).
 
-Eel's documentation is very well written, you can explore that [here]().
+Eel's documentation is very well written, you can explore that [here](https://github.com/ChrisKnott/Eel).
 
-The downside is that some level of HTML/CSS proficiency is required to edit the GUI. To help compensate for this, I've put together a [video]() about HTML/CSS.
+The downside is that some level of HTML/CSS proficiency is required to edit the GUI. To help compensate for this, I've put together some videos below to get you started with these languages. 
 
 Please note that the main dials in the GUI are a library I pulled from the internet. As such, the majority of the settings are easily accessible in the attributes that load the dials.
 
@@ -183,6 +189,11 @@ These tutorials are in no way meant to be comprehensive, but they should serve a
 [Linux Virtual Environments](https://www.youtube.com/watch?v=Kg1Yvry_Ydk)
 
 # A Path Forward
+
+The most necessary change is one of team culture - this was slightly too big of a job for just me. I think it can be easily divided into three sections: programming, CAD & simple circuits. Each of these sections is easily underestimated. I suggest a team of 2 - 3 consistent members, one designated to each section. These members should iterate on what's there (however, nearly everything I built was rushed and could use a replacement) and should be cognizant of their own workloads: do they need to recruit a subordinate? When will they leave the team? How will they transfer their experience?
+
+The engineering I did for Baja was certainly not my best work, but this is the aspect where I personally struggled the most.
+
 ### Incomplete Features
 ###### Zero Timeout
 Currently, neither the speedometer nor the tachometer will ever reach zero. Since these values are calculated by dividing a constant by a change in time, at no point in time will this function ever return zero.
