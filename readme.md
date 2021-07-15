@@ -176,11 +176,11 @@ Thankfully, by spending the school's money, you can buy yourself some tools that
 These tutorials are in no way meant to be comprehensive, but they should serve as a launch point for you to delve further into the subject areas that cause you trouble.
 
 ### HTML/CSS/JS
-[Overview](https://www.youtube.com/watch?v=gT0Lh1eYk78)
-[HTML (Short)](https://www.youtube.com/watch?v=bWPMSSsVdPk)
-[HTML (Atom)](https://www.youtube.com/watch?v=bupWPZdXqIA)
-[CSS](https://www.youtube.com/watch?v=1PnVor36_40)
-[JavaScript](https://www.youtube.com/watch?v=W6NZfCO5SIk)
+###### [Overview](https://www.youtube.com/watch?v=gT0Lh1eYk78)
+###### [HTML (Short)](https://www.youtube.com/watch?v=bWPMSSsVdPk)
+###### [HTML (Atom)](https://www.youtube.com/watch?v=bupWPZdXqIA)
+###### [CSS](https://www.youtube.com/watch?v=1PnVor36_40)
+###### [JavaScript](https://www.youtube.com/watch?v=W6NZfCO5SIk)
 
 ### Python3
 [Python Overview](https://www.youtube.com/watch?v=kqtD5dpn9C8)
