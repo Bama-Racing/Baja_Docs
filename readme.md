@@ -183,10 +183,10 @@ These tutorials are in no way meant to be comprehensive, but they should serve a
 ###### [JavaScript](https://www.youtube.com/watch?v=W6NZfCO5SIk)
 
 ### Python3
-[Python Overview](https://www.youtube.com/watch?v=kqtD5dpn9C8)
-[Python Eel](https://www.youtube.com/watch?v=8eeUV1RHkmw)
-[Python on a RasPi](https://www.youtube.com/watch?v=xTIBG_KD8Bk)
-[Linux Virtual Environments](https://www.youtube.com/watch?v=Kg1Yvry_Ydk)
+###### [Python Overview](https://www.youtube.com/watch?v=kqtD5dpn9C8)
+###### [Python Eel](https://www.youtube.com/watch?v=8eeUV1RHkmw)
+###### [Python on a RasPi](https://www.youtube.com/watch?v=xTIBG_KD8Bk)
+###### [Linux Virtual Environments](https://www.youtube.com/watch?v=Kg1Yvry_Ydk)
 
 # A Path Forward
 
