@@ -52,12 +52,12 @@ That being said, the following is a list of programming languages, softwares, me
 
 # System Overview
 ### HUD Overview
-The HUD is Electrical's show pony. It is currently comprised of a Raspberry Pi connected to a touch screen display and two Hall Effect Sensors (HES). These Hall Effect Sensors are able to detect magnetic fields. By placing magnets on the output shaft of the engine and one of the axles, we can derive engine and wheel RPM (and then calculate speed).
+The HUD is Electrical's show pony. It is currently comprised of a Raspberry Pi connected to a touch screen display and two Hall Effect Sensors (HES). These Hall Effect Sensors enable the Pi to detect magnetic fields. By placing magnets on the output shaft of the engine and one of the axles, we can derive engine and wheel RPM (and then calculate speed).
 
 ### Firmware
-The firmware is what I have labeled the calculation code. This code begins by using a listener event called an interrupt to monitor the GPIO pins the Hall Effect Sensors are connected to.
+The firmware is what I have labeled the code that links the sensors to the Pi and the math that calculates the RPM and Speed. This code begins by using a listener event called an 'interrupt' to monitor the GPIO pins the Hall Effect Sensors are connected to.
 
-When the voltage on this pin changes, the interrupt listener is triggered and calls the prescribed function. This function records the time between pulses in nanoseconds and uses this to calculate RPM. The speed function is then multiplied by a constant to account for wheel diameter.
+When the voltage on this pin changes, the interrupt listener is triggered and calls the attached function. This function records the time between pulses in nanoseconds and uses this to calculate RPM. The speed function is then multiplied by a constant to account for wheel diameter.
 
 ### Software
 The data from the speed and RPM functions is then saved to a variable. The software then displays these variables on the GUI.
@@ -65,43 +65,40 @@ The data from the speed and RPM functions is then saved to a variable. The softw
 ### GUI
 The GUI is generated using a library called Eel. Eel does a couple things:
 * Launches a locally hosted website
-* Connects the JavaScript (JS) file in this site to your main Python script
+* Connects the JavaScript (JS) file for this site to your main Python script & vise versa
 
-By connecting the JS and Python with Eel, the main Python script is able to call functions defined in your JavaScript... since JavaScript has built in features to modify HTML, using Eel as a proxy, your Python can modify the HTML GUI.  
+By connecting the JS and Python with Eel, the main Python script is able to call functions defined in your JavaScript; since JavaScript has built in features to modify HTML (the GUI is built in HTML), using Eel as a proxy, your Python can modify the HTML GUI.  
 
 ### Kill Switches
-Kill Switches are required by SAE.
+Kill Switches are required by SAE. They short circuit the sparkplugs so that the engine turns off. You should double check the [SAE Rulebook] to make sure the following information is still accurate.
 
-Pressing **either** kill switch should stop the engine.
+Pressing **either** Kill Switch should stop the engine.
+
+Currently, one button-switch is placed on the driver's left side near the middle of the side impact and another on the upper right side of the frame, just behind the firewall, when looking at the car from behind.
+
+###### Circuit Diagram
+![image](https://user-images.githubusercontent.com/16143653/119431099-99d81d80-bcd7-11eb-90eb-c7564321935e.png)
 
 ### Brakelight
-The brakelight is also required by SAE. You should again double check the [SAE Rulebook] to make sure the following information is still accurate.
+The brakelight is also required by SAE. You should double check the [SAE Rulebook] to make sure the following information is still accurate.
 
 ### Headlights
 In the past, Baja has run a lightbar or similar headlight unit. This is not required and should take a lower priority than the items above, but it is a very simple circuit.
 
 # System Details
 ### The HUD
-The HUD is currently comprised of three major PCBs and one power distribution PCB (the power PCB simply gives more slots for 3v3 power and ground coming from the RasPi to power the HES).
+The HUD is currently comprised of three major PCBs and one power distribution PCB (the power distribution board simply gives more slots for 3v3 power and ground coming from the RasPi to power the HES).
 
-In addition to the power distribution board, the RasPi is also connected to the Hall Effect Sensors with one data cable to each board.
+In addition to the power distribution board, the RasPi is also connected to the Hall Effect Sensors. There are two Hall Effect sensors and each require their own signal cable.
 
-These sensors have a binary digital output dependent on their proximity to magnetic fields. If you are unfamilair with Arduinos and RasPis, binary digital output simply means that the sensor can vary the voltage coming out of its signal pin; when there is a magnetic field detected by the sensor, the voltage will be set to 3.3V. When there is no magnetic field detected, the signal output pin is set to 0V.
+These sensors have both a binary and analog digital output dependent on their proximity to magnetic fields; we use the digital output. 
+
+If you are unfamilair with Arduinos and RasPis, binary digital output simply means that the sensor can vary the voltage coming out of its signal pin; when there is a magnetic field detected by the sensor, the voltage will be set to 3.3V. When there is no magnetic field detected, the signal output pin is set to 0V.
 
 We can then monitor the voltage set by these sensors which is transmitted to the Pi through their digital output pins. When the voltage changes, the firmware will trigger the calculation functions discussed above.
 
 ###### Circuit Diagram
 ![image](https://user-images.githubusercontent.com/16143653/119431060-82993000-bcd7-11eb-8594-f73f50013f66.png)
-
-### Kill Switches
-You should double check the [SAE Rulebook] for the latest rules, however currently, one button-switch is placed on the driver's left side near the middle of the side impact and another on the upper right side of the frame, just behind the firewall, when looking at the car from behind.
-
-The kill switches work by shorting out the low-voltage end of the alternator's transformer. A car produces it's electricity using an alternator; the alternator sits on the engine and turns the motion of the shafts into electrical power. This electricity is then put into a transformer which provides adequate voltage/current to the sparkplug.
-
-By shorting this transformer, we can halt the spark plugs from firing, thus "killing" the engine.
-
-###### Circuit Diagram
-![image](https://user-images.githubusercontent.com/16143653/119431099-99d81d80-bcd7-11eb-90eb-c7564321935e.png)
 
 ### Brakelight
 There are two brakelight sensors integrated into the brakeline. When the brake is pushed, the pressure in the brakeline causes these switches to close an electrical circuit.
@@ -117,18 +114,18 @@ The following section will briefly touch on the recommended skills listed above,
 ### 3D Printing
 I base a lot of my work around 3D printing. It's very fast, if I plan my day well, I can go through 10 - 15 iterations of a design per day, compared to a teammate who might go through a similar number in a year.
 
-If you pick the right filament, and the right settings, you can produce some solid results, but you are limited to the durability of plastics.
+If you pick the right filament, and the right settings, you can produce strong and reliable results, but you are generally limited to the durability of plastics.
 
 * If you are not comfortable learning to use the printer in the office on your own, please reach out to Nathan Eads.
 
 * If you do not want to learn how to use a printer and would just prefer to have your models produced for you, consider reaching out to the Cube. This will take longer, but it's free and a good choice for early prototypes.
 
-*Even if you use the printer in the office, it might be wise to setup an account with the Cube. Sometimes you will be busy. Sometimes, you just need something made for you.*
+*Even if you use the printer in the office, it might be wise to setup an account with the Cube. Sometimes you will be busy and just need something made for you.*
 
 ### Waterproofing
 *The kill switches, brakelight, and headlights do not need to be waterproofed.*
 
-Any housing for the HUD will need to be waterproofed. I recommend a mix of window sealant and hotglue. Window sealant works well for long crevices and hotglue works well for large surface area holes. Optimally, whatever waterproof unit the HUD is placed in will also be covered by the front hood body panel. **DO NOT allow the HUD to be run if it is actively raining**, understand that any waterproof unit is prone to failure.
+Any housing for the HUD will need to be waterproofed. I recommend a mix of window sealant and hotglue. Window sealant works well for long crevices and hotglue works well for large surface area holes. Optimally, whatever waterproof unit the HUD is placed in will also be covered by the front hood body panel. **Avoid using the HUD if it is actively raining**, any waterproof unit is prone to failure.
 
 For 3D printed parts, please note that layer lines will leak under prolonged exposure. To compensate for this, maximizing the layer height (thereby minimizing the number of layers, and thus the number of gaps between layers) will reduce potential leak points. Likewise, increasing infill percentage (akin to density) will leave fewer internal structures for water to permeate.
 
@@ -190,11 +187,14 @@ These tutorials are in no way meant to be comprehensive, but they should serve a
 
 # A Path Forward
 
-The most necessary change is one of team culture - this was slightly too big of a job for just me. I think it can be easily divided into three sections: programming, CAD & simple circuits. Each of these sections is easily underestimated. I suggest a team of 2 - 3 consistent members, one designated to each section. These members should iterate on what's there (however, nearly everything I built was rushed and could use a replacement) and should be cognizant of their own workloads: do they need to recruit a subordinate? When will they leave the team? How will they transfer their experience?
+The most necessary change is of team culture - this was slightly too big of a job for just me. I think the Electrical team should be divided into two major interests: hardware and software. Each of these sections is easily underestimated. I suggest a team of 2 - 3 consistent members, one designated to each section. These members should iterate on what's there (however, nearly everything I built was rushed and could use a replacement) and should be cognizant of their own workloads: do they need to recruit a subordinate? When will they leave the team? How will they transfer their experience?
 
 The engineering I did for Baja was certainly not my best work, but this is the aspect where I personally struggled the most.
 
 ### Incomplete Features
+###### UIX 
+The current user experience is exremely complicated. There is no power switch for the Pi, meaning that if the battery is installed, the system is on. The software is difficult to start, you need to use the command line to activate the virtual environment and then launch the code. 
+
 ###### Zero Timeout
 Currently, neither the speedometer nor the tachometer will ever reach zero. Since these values are calculated by dividing a constant by a change in time, at no point in time will this function ever return zero.
 
@@ -211,4 +211,4 @@ In an attempt to include some members into my hectic workflow, I asked some peop
 This team elected to use a radio platform called LoRa.
 
 ###### HUD Waterproof Unit
-The HUD's waterproof unit was assembled faster than I would have liked. It could use a redesign and makeover.
+The HUD's waterproof unit was assembled faster than I would have liked. It needs a redesign and/or a makeover.
